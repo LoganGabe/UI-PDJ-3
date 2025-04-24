@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Label tabindex="-1" text="TELA DO PC" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; color: rgb(255, 255, 255); font-size: 109px;" />
+    <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" style="height: 92px; width: 107px; -unity-text-align: lower-center; white-space: nowrap; text-overflow: clip;" />
+</ui:UXML>
