@@ -1,4 +1,11 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:Label tabindex="-1" text="TELA DO PC" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; color: rgb(255, 255, 255); font-size: 109px;" />
-    <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" style="height: 92px; width: 107px; -unity-text-align: lower-center; white-space: nowrap; text-overflow: clip;" />
+    <Style src="project://database/Assets/ButtonStyle.uss?fileID=7433441132597879392&amp;guid=3dbaab6ef459c2d4a92397a3e76d0e80&amp;type=3#ButtonStyle" />
+    <ui:VisualElement style="flex-grow: 1; min-width: 0; min-height: 2%; width: auto; height: auto;">
+        <ui:Label tabindex="-1" text="Kill the Diegetic UI in the West with Shurikens&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" style="-unity-text-align: upper-center; color: rgb(118, 42, 24); font-size: 88px; -unity-font: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&amp;guid=e3265ab4bf004d28a9537516768c1c75&amp;type=3#LiberationSans&quot;);" />
+    </ui:VisualElement>
+    <ui:VisualElement name="VisualElement" style="flex-grow: 1; height: 816px; margin-top: 0; padding-top: 100px; padding-right: 550px; padding-left: 550px; padding-bottom: 100px;">
+        <ui:Button text="PLAY" parse-escape-sequences="true" display-tooltip-when-elided="true" class="buttonHover buttonStyle" style="margin-bottom: 80px; margin-top: 2px; padding-top: 6px; padding-bottom: 6px; font-size: 100px; color: rgb(0, 0, 0);" />
+        <ui:Button text="OPTIONS" parse-escape-sequences="true" display-tooltip-when-elided="true" class="buttonHover buttonStyle" style="margin-bottom: 80px; margin-top: 2px; padding-top: 6px; padding-bottom: 6px; font-size: 100px; color: rgb(0, 0, 0);" />
+        <ui:Button text="EXIT" parse-escape-sequences="true" display-tooltip-when-elided="true" class="buttonHover buttonStyle" style="margin-bottom: 80px; margin-top: 2px; padding-top: 6px; padding-bottom: 6px; font-size: 100px; color: rgb(0, 0, 0);" />
+    </ui:VisualElement>
 </ui:UXML>

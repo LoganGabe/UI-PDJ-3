@@ -1,0 +1,4 @@
+.buttonStyle {
+    background-image: url("project://database/Assets/Sprites/SpriteSheetUI.png?fileID=431096884&guid=e209a6ff61049ef40833a0a6656b63bd&type=3#SpriteSheetUI_57");
+    background-color: rgba(0, 0, 0, 0);
+}
