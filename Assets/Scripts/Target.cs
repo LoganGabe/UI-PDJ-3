@@ -3,13 +3,17 @@ using UnityEngine.UI;
 
 public class Target : MonoBehaviour
 {
-    public RectTransform panel; // Reference to the panel (assumes it's a UI element)
+    public RectTransform panel;
     public GameObject canvas;
     public Slider life;
     public int goal;
+    public AudioSource audioSource;
+    public AudioClip hitSound;
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         life.maxValue = goal;
         life.value = goal;
 
@@ -17,9 +21,10 @@ public class Target : MonoBehaviour
     }
     void OnCollisionEnter(Collision other)
     {
-        // Check if the object that collided with this object has the tag "Bullet"
         if (other.gameObject.CompareTag("Bullet"))
         {
+            audioSource.PlayOneShot(hitSound);
+
             TeleportToRandomPosition();
 
             life.value -= 1;
@@ -35,6 +40,7 @@ public class Target : MonoBehaviour
 
     void TeleportToRandomPosition()
     {
+
         if (panel != null)
         {
             // Get the panel's dimensions
