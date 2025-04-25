@@ -7,7 +7,8 @@ using System.Collections;
 public class MainMenuEvents : MonoBehaviour
 {
     private UIDocument uiDocument;
-    private Button button;
+    private Button playButton;
+    private Button exitButton;
     private List<Button> menuButtons = new List<Button>();
     private AudioSource audioSource;
     public AudioClip hoverSound;
@@ -21,8 +22,11 @@ public class MainMenuEvents : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         uiDocument = GetComponent<UIDocument>();
 
-        button = uiDocument.rootVisualElement.Q("PlayButton") as Button;
-        button.RegisterCallback<ClickEvent>(OnPlayGameButtonClick);
+        playButton = uiDocument.rootVisualElement.Q("PlayButton") as Button;
+        exitButton = uiDocument.rootVisualElement.Q("ExitButton") as Button;
+
+        playButton.RegisterCallback<ClickEvent>(OnPlayGameButtonClick);
+        exitButton.RegisterCallback<ClickEvent>(OnExitButtonClick);
 
         menuButtons = uiDocument.rootVisualElement.Query<Button>().ToList();
 
@@ -43,6 +47,12 @@ public class MainMenuEvents : MonoBehaviour
     private void OnPlayGameButtonClick(ClickEvent evt)
     {
         StartCoroutine(FadeAndLoadScene(1)); // Start fade effect before loading the scene
+    }
+
+    private void OnExitButtonClick(ClickEvent evt)
+    {
+        Application.Quit();
+        Debug.Log("Exit button clicked. Application will quit.");
     }
 
     private IEnumerator FadeAndLoadScene(int sceneIndex)
@@ -68,7 +78,7 @@ public class MainMenuEvents : MonoBehaviour
 
     private void OnDestroy()
     {
-        button.UnregisterCallback<ClickEvent>(OnPlayGameButtonClick);
+        playButton.UnregisterCallback<ClickEvent>(OnPlayGameButtonClick);
 
         foreach (var menuButton in menuButtons)
         {
@@ -86,7 +96,6 @@ public class MainMenuEvents : MonoBehaviour
 
     private void OnMenuButtonHover(MouseEnterEvent evt)
     {
-        Debug.Log("Hovering over button: ");
         audioSource.PlayOneShot(hoverSound);
     }
 }
